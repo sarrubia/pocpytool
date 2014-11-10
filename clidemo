@@ -1,0 +1,16 @@
+#!/usr/bin/python
+import click
+import time
+import os
+
+
+@click.command()
+@click.argument('variable')
+def demo(variable):
+    click.echo("**** LA VARIABLE ES: %s" % variable)
+    click.echo("**** LA VARIABLE ENV ES: %s" % os.getenv("miAppVersion", "NO ENCONTRO NADA"))
+    click.echo("**** LA VARIABLE ENV ES: %s" % os.getenv("environment", "NO ENCONTRO NADA"))
+    click.echo("**** El path del script es: %s" % os.path.realpath(__file__))
+        
+if __name__ == '__main__':
+    demo()
